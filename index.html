@@ -2,11 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Staff Schedule Test Page</title>
+  <title>Staff Schedule - Styled</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      text-align: center;
+      color: #555;
+    }
+
+    .schedule-table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 800px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .schedule-table th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .schedule-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
 </head>
 <body>
   <h1>Staff Schedule</h1>
-  <p>This is a test page to confirm deployment works.</p>
-  <p>Next step: add styling and interactivity!</p>
+  <p>This page now has some basic styling!</p>
+
+  <table class="schedule-table">
+    <tr>
+      <th>Time Slot</th>
+      <th>Recommended Staff</th>
+    </tr>
+    <tr>
+      <td>9am - 12pm</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>12pm - 3pm</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>3pm - 6pm</td>
+      <td>5</td>
+    </tr>
+  </table>
 </body>
 </html>
