@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Staff Schedule - Styled</title>
+  <title>Staff Schedule - Dynamic</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -49,25 +49,53 @@
 </head>
 <body>
   <h1>Staff Schedule</h1>
-  <p>This page now has some basic styling!</p>
+  <p>This schedule table is now generated with JavaScript!</p>
 
-  <table class="schedule-table">
-    <tr>
-      <th>Time Slot</th>
-      <th>Recommended Staff</th>
-    </tr>
-    <tr>
-      <td>9am - 12pm</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>12pm - 3pm</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>3pm - 6pm</td>
-      <td>5</td>
-    </tr>
-  </table>
+  <div id="schedule-container"></div>
+
+  <script>
+    // Example data (this could later come from an API or JSON file)
+    const scheduleData = [
+      { time: "9am - 12pm", staff: 5 },
+      { time: "12pm - 3pm", staff: 6 },
+      { time: "3pm - 6pm", staff: 5 },
+      { time: "6pm - 9pm", staff: 4 }
+    ];
+
+    // Function to build the table
+    function buildScheduleTable(data) {
+      const table = document.createElement('table');
+      table.className = 'schedule-table';
+
+      // Header row
+      const thead = document.createElement('thead');
+      thead.innerHTML = `
+        <tr>
+          <th>Time Slot</th>
+          <th>Recommended Staff</th>
+        </tr>
+      `;
+      table.appendChild(thead);
+
+      // Data rows
+      const tbody = document.createElement('tbody');
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.time}</td>
+          <td>${item.staff}</td>
+        `;
+        tbody.appendChild(row);
+      });
+      table.appendChild(tbody);
+
+      // Insert into the page
+      const container = document.getElementById('schedule-container');
+      container.appendChild(table);
+    }
+
+    // Call the function on page load
+    buildScheduleTable(scheduleData);
+  </script>
 </body>
 </html>
