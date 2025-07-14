@@ -2,100 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Staff Schedule - Dynamic</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-
-    p {
-      text-align: center;
-      color: #555;
-    }
-
-    .schedule-table {
-      margin: 20px auto;
-      border-collapse: collapse;
-      width: 80%;
-      max-width: 800px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .schedule-table th,
-    .schedule-table td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: center;
-    }
-
-    .schedule-table th {
-      background-color: #007BFF;
-      color: white;
-    }
-
-    .schedule-table tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-  </style>
+  <title>Staff Schedule - Modular</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Staff Schedule</h1>
-  <p>This schedule table is now generated with JavaScript!</p>
+  <p>This schedule table is now powered by external CSS and JS files.</p>
 
   <div id="schedule-container"></div>
 
-  <script>
-    // Example data (this could later come from an API or JSON file)
-    const scheduleData = [
-      { time: "9am - 12pm", staff: 5 },
-      { time: "12pm - 3pm", staff: 6 },
-      { time: "3pm - 6pm", staff: 5 },
-      { time: "6pm - 9pm", staff: 4 }
-    ];
-
-    // Function to build the table
-    function buildScheduleTable(data) {
-      const table = document.createElement('table');
-      table.className = 'schedule-table';
-
-      // Header row
-      const thead = document.createElement('thead');
-      thead.innerHTML = `
-        <tr>
-          <th>Time Slot</th>
-          <th>Recommended Staff</th>
-        </tr>
-      `;
-      table.appendChild(thead);
-
-      // Data rows
-      const tbody = document.createElement('tbody');
-      data.forEach(item => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td>${item.time}</td>
-          <td>${item.staff}</td>
-        `;
-        tbody.appendChild(row);
-      });
-      table.appendChild(tbody);
-
-      // Insert into the page
-      const container = document.getElementById('schedule-container');
-      container.appendChild(table);
-    }
-
-    // Call the function on page load
-    buildScheduleTable(scheduleData);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
