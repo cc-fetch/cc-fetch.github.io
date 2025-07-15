@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Staff Schedule - Modular</title>
+  <title>Staff Schedule - User Input</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Staff Schedule</h1>
-  <p>This schedule table is now powered by external CSS and JS files.</p>
+  <p>Paste your schedule data as JSON below and click "Load Schedule".</p>
+
+  <textarea id="json-input" placeholder='[{"time":"9am - 12pm","staff":5},...]'></textarea>
+  <button id="load-button">Load Schedule</button>
 
   <div id="schedule-container"></div>
 
