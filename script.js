@@ -49,4 +49,13 @@ document.getElementById('load-button').addEventListener('click', () => {
   } catch (e) {
     alert("Error parsing JSON: " + e.message);
   }
+document.getElementById('file-input').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    document.getElementById('json-input').value = e.target.result;
+  };
+  reader.readAsText(file);
 });
