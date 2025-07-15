@@ -1,25 +1,105 @@
-textarea {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+#json-input {
   display: block;
-  margin: 20px auto;
-  width: 80%;
+  width: 90%;
   max-width: 800px;
-  height: 150px;
-  padding: 10px;
+  height: 180px;
+  padding: 12px;
+  margin: 0 auto 20px auto;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   font-family: monospace;
   font-size: 14px;
+  resize: vertical;
 }
 
 button {
   display: block;
-  margin: 10px auto 30px auto;
-  padding: 10px 20px;
+  margin: 0 auto 30px auto;
+  padding: 12px 24px;
   font-size: 16px;
   background-color: #007BFF;
   color: white;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+#schedule-container {
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  overflow-x: auto;
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.schedule-table th {
+  background-color: #007BFF;
+  color: white;
+}
+
+.schedule-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+@media (max-width: 600px) {
+  #json-input {
+    height: 150px;
+    font-size: 13px;
+  }
+
+  button {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
 }
