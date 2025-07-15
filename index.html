@@ -9,8 +9,13 @@
   <h1>Staff Schedule</h1>
   <p>Paste your schedule data as JSON below and click "Load Schedule".</p>
 
-  <textarea id="json-input" placeholder='[{"time":"9am - 12pm","staff":5},...]'></textarea>
-  <button id="load-button">Load Schedule</button>
+<textarea id="json-input" placeholder="Paste your JSON schedule here"></textarea>
+
+<div style="text-align:center; margin-bottom:20px;">
+  <input type="file" id="file-input" accept=".json">
+</div>
+
+<button onclick="generateSchedule()">Generate Schedule</button>
 
   <div id="schedule-container"></div>
 
